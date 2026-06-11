@@ -406,59 +406,6 @@
 
 
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Em Breve</title>
-
-<style>
-#site-lock{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.75);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-    z-index:999999;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-.lock-content{
-    color:#fff;
-    font-family:Arial,sans-serif;
-    padding:30px;
-}
-
-.lock-content h1{
-    font-size:3rem;
-    margin-bottom:10px;
-}
-
-.lock-content p{
-    font-size:1.2rem;
-    margin-bottom:15px;
-}
-
-#countdown{
-    font-size:3rem;
-    font-weight:bold;
-}
-
-.logo{
-    font-size:4rem;
-    margin-bottom:20px;
-}
-</style>
-</head>
-<body>
-
 
 
 
@@ -466,49 +413,6 @@
 
 
     
-<!-- Seu site continua aqui normalmente -->
-
-<div id="site-lock">
-    <div class="lock-content">
-        <div class="logo">🚀</div>
-        <h1>Lançamento em Breve</h1>
-        <p>O acesso será liberado às 22:00.</p>
-        <div id="countdown">00:00:00</div>
-    </div>
-</div>
-
-<script>
-(function(){
-
-    function updateCountdown() {
-        const now = new Date();
-
-        let releaseTime = new Date();
-        releaseTime.setHours(22,0,0,0);
-
-        if (now >= releaseTime) {
-            document.getElementById("site-lock").style.display = "none";
-            return;
-        }
-
-        const diff = releaseTime - now;
-
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").innerHTML =
-            String(hours).padStart(2,"0") + ":" +
-            String(minutes).padStart(2,"0") + ":" +
-            String(seconds).padStart(2,"0");
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown,1000);
-
-})();
-</script>
-
 
         
     
